@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">GeorgeTV</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Редактирование премьер<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/films">Удаление фильмов<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/upload">Загрузка фильмов<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+    
+</nav>
+<br>
+<div class="container">
+    <h2>Консоль фильмов George TV</h2>
+</div>
+<br>
+<div class="container">
+    <ul>
+    {% for u in films %}
+        <form action = "" method = "post" enctype = "multipart/form-data">
+        <div class="row">
+
+            <div class="col-md-5">
+                <li><h5>{{u.id}} - {{u.style}} - {{u.name}}</h5></li>
+            <input type="hidden" name="new_id" value={{u.id}}>
+            
+            </div>
+
+            <div class="col-md-2"><button type = "submit" class="btn btn-danger">Удалить</button></div>
+        </div>
+        <br>
+    </form>
+    {% endfor %}
+    </ul>
+    
+</div>
+
+{% endblock %}

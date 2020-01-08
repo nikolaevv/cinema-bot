@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">GeorgeTV</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Редактирование премьер<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/films">Удаление фильмов<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/upload">Загрузка фильмов<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+    
+</nav>
+
+<br>
+<div class="container">
+    <h2>Консоль премьер George TV</h2>
+</div>
+<br>
+<div class="container">
+    {% for u in premiers %}
+        <form action = "" method = "post" enctype = "multipart/form-data">
+        <div class="row">
+
+            <div class="col-md-5">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">{{u.id}} - {{u.name}}</span>
+                    </div>
+                    <input name="new_name" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
+                </div>
+            </div>
+            <input type="hidden" name="new_id" value={{u.id}}>
+            <div class="col-md-5">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">{{u.trailer}}</span>
+                    </div>
+                    <input name = "new_trailer" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
+                </div>
+            </div>
+
+            <div class="col-md-2"><button type = "submit" class="btn btn-success">Сохранить</button></div>
+        </div>
+        <br>
+    </form>
+    {% endfor %}
+    
+</div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<br>
+<br>
+<br>
+<div class="container">
+    <h1>Вход в систему</h1>
+    <br>
+    <form action = "" method = "post" enctype = "multipart/form-data">
+        
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">@</span>
+            </div>
+            <input name="nickname" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Пароль</span>
+            </div>
+            <input name="password" type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <br>
+        <center><button type = "submit" class="btn btn-success">Войти</button></center>
+        
+    </form>
+</div>
+
+{% endblock %}

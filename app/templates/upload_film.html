@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">GeorgeTV</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Редактирование премьер<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/films">Удаление фильмов<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/upload">Загрузка фильмов<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+    
+</nav>
+
+<h1><center><b>Загрузка фильмов</b></center></h1>
+
+<form action = "" method = "post">
+    
+    <p>Жанр фильма:
+        <select name = "new_style">
+            <option>Драмы</option>
+            <option>Мелодрамы</option>
+            <option>Комедии</option>
+            <option>Детективы</option>
+            <option>Исторические</option>
+            <option>Боевики</option>
+            <option>Ужасы</option>
+            <option>Фантастика</option>
+            <option>Триллеры</option>
+        </select></p>
+
+    <p>Название фильма:
+        <input type = "text" name = "new_name"></p>
+
+    <p>Описание:
+        <textarea name = "new_description" cols = "40" rows = "3" required></textarea></p>
+
+    <p>Постер:
+        <input type = "text" name = "new_poster"></p>
+
+    <p>Трейлер:
+        <input type = "text" name = "new_trailer"></p>
+    
+    <p>Фильм:
+        <input type = "text" name = "new_film"></p>
+    
+    <p><input type = "submit" value = "Отправить">
+        <input type = "reset" value = "Очистить">
+    </p>
+    
+</form>
+
+{% endblock %}
